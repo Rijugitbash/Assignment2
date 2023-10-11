@@ -29,10 +29,5 @@ Technologies Used:
 
 
 
-NOTE:- 
-    Now I am in office so, I have not enght time to create all things , I Things the nth depth of folder creation was chalenging for my side that's why I build this.
-    i can do edit and Delete part also but really I have not time build it. If you give me some time like saterday/sunday then  I can build it.
-    I am in office that's why I can't send you the voice message. I build the logic in night, 
 
-    1. some logic I don't follow in this project "djnago logging", This things is important for all projects. 
 
