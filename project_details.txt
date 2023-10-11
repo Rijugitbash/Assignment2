@@ -1,0 +1,38 @@
+Installation and Setup:
+    1.Install Python 3.10.0.
+    2. Install pip
+
+Running the Process:
+    1. .\venv\Scripts\activate.
+    2. pip install -r requirements.txt.
+    3. Use the default SQLite database in Django, so there's no need to configure a database connection.
+    4. python manage.py runserver
+
+Covered Points:
+    1.Implement User Authentication.
+    2.Create folders of arbitrary depth and upload files to these folders.
+    3.Implement a user logout feature.
+
+Not Covered Points:
+    1.Editing and Deleting functionalities are not included.
+    2.The design aspect is not considered, only the logic is implemented.
+    3. Use the ORM Queries not Row sql queries.
+    4. folder and file upload forms are not validate form . You can create the same name of folder.
+
+Technologies Used:
+    1.Django 4.2.6
+    2.Python 3.10.0
+    3.Django templates for the frontend
+    4.ORM Queries
+    5.MVT (Model-View-Template) architecture
+
+
+
+
+NOTE:- 
+    Now I am in office so, I have not enght time to create all things , I Things the nth depth of folder creation was chalenging for my side that's why I build this.
+    i can do edit and Delete part also but really I have not time build it. If you give me some time like saterday/sunday then  I can build it.
+    I am in office that's why I can't send you the voice message. I build the logic in night, 
+
+    1. some logic I don't follow in this project "djnago logging", This things is important for all projects. 
+

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6" id="form1">
+      <h2>Login</h2>
+      <form method="post">
+        {% csrf_token %}
+        {{ login_form.as_p }}
+        <p>If you have no account ! <a href="#"  onclick="showregister()"> register</a></p>
+        <button type="submit" name="login_submit" class="btn btn-primary mt-3">Login</button>
+      </form>
+    </div>
+    <div class="col-md-6" id="form2">
+      <h2>Register</h2>
+      <form method="post">
+        {% csrf_token %}
+        {{ register_form.as_p }}
+        <p>you have account ? <a href="#"  onclick="showlogin()">login</a></p>
+        <button type="submit" name="register_submit" class="btn btn-primary mt-3">Register</button>
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+  document.getElementById('form2').style.display = 'none'   
+  function showlogin() {
+    document.getElementById('form2').style.display = 'none' 
+    document.getElementById('form1').style.display = 'block'
+  }  
+  function showregister() {
+    document.getElementById('form1').style.display = 'none' 
+    document.getElementById('form2').style.display = 'block'
+  }
+</script>
+{% endblock %}

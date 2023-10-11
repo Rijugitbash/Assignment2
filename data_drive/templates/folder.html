@@ -1,0 +1,100 @@
+{% extends 'dashboard.html' %}
+{% load static %}
+{% block add_css %}
+<link rel="stylesheet" href="{% static 'css/folder.css' %}" type="text/css">
+{% endblock %}
+  
+{% block content %}
+<div class="card">
+  <div class="card-header">
+      <div class="d-flex justify-content-between align-items-center">
+        {% if back_id == 0 %}
+            <a class="btn btn-secondary" href="{% url 'previous_page' previous_id=back_id %}">Back</a>
+        {% endif %}
+        {% if back_id %}
+            <a class="btn btn-secondary" href="{% url 'previous_page' previous_id=back_id %}">Back</a>
+        {% endif %}
+          <h5>{{user}} Drive</h5>
+          <div>
+              <a class="btn btn-primary" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Create Folder</a>
+              <a class="btn btn-primary" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-bs-whatever="@mdo">Upload File</a>
+          </div>
+      </div>
+  </div>
+  <div class="card-body">
+      <div class="folder-list">
+          <div class="folder_container">
+              <p><b style="color: blue;">Your Folders</b></p>
+              <hr>
+
+              {% for folder in folders %}
+              <a href="{% url 'show_folder' folder_id=folder.id %}" class="folder-item btn btn-secondary">
+                  <span>{{ folder.folder_name }}</span>
+              </a>
+              {% endfor %}
+              {% if folders|length == 0 %}
+              <p class="small text-muted">Empty Folder</p>
+              {% endif %}
+          </div>
+
+          <div class="file_container">
+              <p><b style="color: blue;">Your Files</b></p>
+              <hr>
+              {% for file in files %}
+              <a href="#" class="folder-item btn btn-light">
+                  <span>{{ file.file }}</span>
+              </a>
+              {% endfor %}
+              {% if files|length == 0 %}
+              <p class="small text-muted">Empty file</p>
+              {% endif %}
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Create Folder</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}  
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" name="create_folder" class="btn btn-primary">Create</button>
+            </form>
+            </div>
+          </div>
+        </div>
+</div>
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Upload File</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form2.as_p }}  
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" name="upload_file" class="btn btn-primary">Upload</button>
+        </form>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}

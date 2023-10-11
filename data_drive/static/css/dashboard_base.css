@@ -1,0 +1,26 @@
+/* Styles for inactive links */
+.nav-item .nav-link {
+    color: #000; /* Default link color */
+}
+
+/* Styles for active link */
+.nav-item .nav-link.active-link {
+    color: #007bff; /* Active link color */
+    font-weight: bold; /* Bold font for active link */
+}
+/* Sticky footer */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container.flex-grow-1 {
+    padding-bottom: 60px; /* Adjust the value to match the footer's height */
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: aqua;
+}

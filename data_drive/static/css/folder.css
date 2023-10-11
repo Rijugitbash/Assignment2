@@ -1,0 +1,36 @@
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    width: 1000px;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.card-body {
+    padding: 10px;
+}
+
+
+
+.folder_container, .file_container {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+.folder-item {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    color: #333;
+}
